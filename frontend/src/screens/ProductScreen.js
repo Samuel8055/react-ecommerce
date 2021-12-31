@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import Rating from "../components/Rating";
+import { Rating } from "../components";
 import { data } from "../data";
 
 const ProductScreen = (props) => {
@@ -52,7 +52,7 @@ const ProductScreen = (props) => {
                     {product.countInStock > 0 ? (
                       <span className="success">In stock</span>
                     ) : (
-                      <span className="error">Not available</span>
+                      <span className="danger">Not available</span>
                     )}
                   </div>
                 </div>
