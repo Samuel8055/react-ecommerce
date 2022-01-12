@@ -1,9 +1,14 @@
 import express from "express";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 import productRouter from "./routers/productRouter.js";
 import userRouter from "./routers/userRouter.js";
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+dotenv.config();
+
 mongoose.connect(
   process.env.MONGODB_URL ||
     "mongodb+srv://samuel8055:samuel8055@cluster0.vtbiw.gcp.mongodb.net/amazona?retryWrites=true&w=majority"
